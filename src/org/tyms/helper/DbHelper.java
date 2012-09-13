@@ -26,6 +26,7 @@ public class DbHelper extends SQLiteOpenHelper {
        sqLiteDatabase.execSQL("create table test_set (set_id integer primary key autoincrement, set_name text");
        sqLiteDatabase.execSQL("create table test_set_hash (test_set_id integer," +
        						  " word text, meaning text, foreign key('test_set_id') references test_set('set_id')");
+       sqLiteDatabase.execSQL("create table test_settings (test_set_id text)");
     }
 
     @Override
