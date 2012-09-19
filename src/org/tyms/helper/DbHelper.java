@@ -3,6 +3,7 @@ package org.tyms.helper;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "testYourMemorySkills.db";
@@ -23,10 +24,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-       sqLiteDatabase.execSQL("create table test_set (set_id integer primary key autoincrement, set_name text");
-       sqLiteDatabase.execSQL("create table test_set_hash (test_set_id integer," +
-       						  " word text, meaning text, foreign key('test_set_id') references test_set('set_id')");
-       sqLiteDatabase.execSQL("create table test_settings (test_set_id text)");
+       sqLiteDatabase.execSQL("create table test_set (set_id integer primary key autoincrement, set_name text, selected integer)");
+       sqLiteDatabase.execSQL("create table test_set_hash (test_set_id integer, word text, meaning text, foreign key('test_set_id') references test_set('set_id'))");
     }
 
     @Override

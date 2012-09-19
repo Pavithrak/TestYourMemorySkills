@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hello">Hello World, Menu!</string>
-    <string name="app_name"></string>
+    <string name="app_name">Test your memory skills</string>
+    <string name="view_test_sets">Test sets</string>
 </resources>
